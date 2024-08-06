@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   public static GameManager Instance;
-
+    public static GameManager Instance;
     public GameObject endgame, dialoguePanel;
 
     private void Awake()
@@ -19,11 +18,18 @@ public class GameManager : MonoBehaviour
         endgame.GetComponent<Animator>().SetTrigger("EndGameT");
         if (AIPoints.Instance.eviPoints >= AIPoints.Instance.goodPoints) 
         { 
-            //evilEnding
+
+            if (PersonManager.Instance.days <= 0) 
+            { 
+                //badEnding
+            }
         }
         else 
         {
-            //goodEnding
+            if (PersonManager.Instance.days <= 0)
+            {
+                //goodEnding
+            }
         }
 
 

@@ -8,6 +8,6 @@ public class PersonBehaviour
 {
     public string name;
     public bool goodBehaviour;
-    public string setence;
+    public string[] setences;
     public Sprite personFace;
 }
