@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PersonBehaviour : MonoBehaviour
+[System.Serializable]
+public class PersonBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string name;
+    public bool goodBehaviour;
+    public string setence;
+    public Sprite personFace;
 }
