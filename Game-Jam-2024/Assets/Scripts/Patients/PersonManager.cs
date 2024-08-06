@@ -14,7 +14,7 @@ public class PersonManager : MonoBehaviour
     public Button[] gameButtons;
     public Button passDialogueButton;
 
-    int currentSetence;
+    public int currentSetence;
 
     [Header("Pontos pra passar de dia")]
     [Tooltip("Quantos pacientes pra trocar de dia")]
@@ -38,8 +38,8 @@ public class PersonManager : MonoBehaviour
     private void Start()
     {
         currentSetence = 0;
-        chooseNewCase();
         storedTokens = personTokens;
+        chooseNewCase();
     }
 
     public void chooseNewCase() 
@@ -54,17 +54,20 @@ public class PersonManager : MonoBehaviour
         }
         activeCase = personCases[Random.Range(0, personCases.Count - 1)];
         personCases.Remove(activeCase);
+        int currentSentenceIncremented = currentSetence + 1;
 
-        if (currentSetence > 0 && currentSetence++ > activeCase.setences.Length)
+        if (currentSentenceIncremented < activeCase.setences.Length)
         {
+            passDialogueButton.interactable = true;
+        }
+        else
+        {
+            Debug.Log("CurrentSetence ++ = " + currentSetence+1 + "\n Sentences Lenght = " + activeCase.setences.Length);
             foreach (Button b in gameButtons)
             {
                 b.interactable = true;
             }
-        }
-        else
-        {
-            passDialogueButton.interactable = true;
+            
         }
 
         dialogueName.text = activeCase.name;
@@ -77,6 +80,7 @@ public class PersonManager : MonoBehaviour
 
     public void AIPointDistribution(bool aproveButton) 
     {
+
         foreach (Button b in gameButtons)
         {
             b.interactable = false;
@@ -109,27 +113,33 @@ public class PersonManager : MonoBehaviour
         }    
     }
 
-    public void PassDialogue() 
+    public void PassDialogue()
     {
-        if (currentSetence > 0 && currentSetence++ > activeCase.setences.Length)
+        int currentSentenceIncremented = currentSetence + 1;
+
+        if (currentSentenceIncremented < activeCase.setences.Length - 1)
         {
-            passDialogueButton.interactable |= false;
+            Debug.Log("tem proxima frase");
+        }
+        else
+        {
             foreach (Button b in gameButtons)
             {
                 b.interactable = true;
             }
-            currentSetence = 0;
-            return;
+            passDialogueButton.interactable = false;
         }
+
         currentSetence++;
         Debug.Log(currentSetence);
         StopAllCoroutines();
         StartCoroutine(TypeLetters(activeCase.setences[currentSetence]));
-
     }
+
 
     public void ChangePerson() 
     {
+        currentSetence = 0;
         dialogueSprite.gameObject.GetComponent<Animator>().SetTrigger("Changing");
     }
 
