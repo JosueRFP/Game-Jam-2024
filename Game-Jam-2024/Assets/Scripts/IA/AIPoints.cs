@@ -6,7 +6,7 @@ public class AIPoints : MonoBehaviour
 {
     public static AIPoints Instance;
 
-    [HideInInspector]public int eviPoints, goodPoints;
+    public int eviPoints, goodPoints;
 
     private void Awake()
     {

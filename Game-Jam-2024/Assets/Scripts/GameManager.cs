@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
    public static GameManager Instance;
 
-    public GameObject endgame;
+    public GameObject endgame, dialoguePanel;
 
     private void Awake()
     {
@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
 
     public void EndGame() 
     {
-        //endgame.GetComponent<Animator>().SetTrigger("");
+        dialoguePanel.SetActive(false);
+        endgame.GetComponent<Animator>().SetTrigger("EndGameT");
         if (AIPoints.Instance.eviPoints >= AIPoints.Instance.goodPoints) 
         { 
             //evilEnding

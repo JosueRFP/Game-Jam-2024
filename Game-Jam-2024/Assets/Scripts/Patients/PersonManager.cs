@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PersonManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PersonManager : MonoBehaviour
     [Header("Componentes de Texto")]
     public TMP_Text dialogueName,dialogueSetence;
     public SpriteRenderer dialogueSprite;
+    public Button[] gameButtons;
 
 
     [Header("Lista dos Casos/Pessoas")]
@@ -28,10 +30,14 @@ public class PersonManager : MonoBehaviour
 
     public void chooseNewCase() 
     {
+        foreach(Button b in gameButtons) 
+        {
+            b.interactable = true;
+        }
         Debug.Log("Caso novo");
         if (personCases.Count <= 0) 
         {
-            //acabar jogo
+            GameManager.Instance.EndGame();
             Debug.Log("GameEnd");
             return;
         }
@@ -39,38 +45,61 @@ public class PersonManager : MonoBehaviour
         personCases.Remove(activeCase);
 
         dialogueName.text = activeCase.name;
-        dialogueSetence.text = activeCase.setence;
+        StopAllCoroutines();
+        StartCoroutine(TypeLetters(activeCase.setence));
         dialogueSprite.sprite = activeCase.personFace;
     }
 
     public void AIPointDistribution(bool aproveButton) 
-    { 
+    {
+        Debug.Log("pointDistribution");
+        foreach (Button b in gameButtons)
+        {
+            b.interactable = false;
+        }
+
         if (aproveButton && activeCase.goodBehaviour) 
         {
             AIPoints.Instance.goodPoints++;
-            chooseNewCase();
+            ChangePerson();
             return;
         }
         else if(aproveButton && !activeCase.goodBehaviour) 
         { 
             AIPoints.Instance.eviPoints++;
-            chooseNewCase();
+            ChangePerson();
             return;
         }
 
         if(!aproveButton && !activeCase.goodBehaviour) 
         { 
             AIPoints.Instance.goodPoints++;
-            chooseNewCase();
+            ChangePerson();
             return;
         }
         else if(!aproveButton && activeCase.goodBehaviour) 
         {
             AIPoints.Instance.eviPoints++;
-            chooseNewCase();
+            ChangePerson();
             return;
-        }
-
-        
+        }    
     }
+
+    public void ChangePerson() 
+    {
+        dialogueSprite.gameObject.GetComponent<Animator>().SetTrigger("Changing");
+    }
+
+    
+      IEnumerator TypeLetters(string sentence)
+    {
+        dialogueSetence.text = "";
+        foreach(char letter in sentence.ToCharArray())
+        {
+            dialogueSetence.text += letter;
+            yield return null;
+        }
+    } 
+     
+
 }
