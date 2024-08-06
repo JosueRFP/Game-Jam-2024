@@ -298,7 +298,7 @@ MonoBehaviour:
   personTokens: 5
   days: 3
   personCases:
-  - name: Josefa
+  - name: Maria
     goodBehaviour: 1
     setences:
     - Fala1 shabnaksdjkhfoiekhfosdiyfd
@@ -306,13 +306,13 @@ MonoBehaviour:
     - fala
     - 100
     - ultima fala
-    personFace: {fileID: 7482667652216324306, guid: 125835d8d8c96bf469c40e4ec438bd9c, type: 3}
+    personFace: {fileID: 520904327, guid: d3a0f27d59da928419d11c80e26505f9, type: 3}
   - name: "Jo\xE3o Malz\xE3o"
     goodBehaviour: 0
     setences:
     - fala1
     - fala2
-    personFace: {fileID: -2413806693520163455, guid: 872cbfe1ce1646949834e9d3ad66ab22, type: 3}
+    personFace: {fileID: 1413621473, guid: 3d1a4be228dd01a40934124098100b03, type: 3}
 --- !u!4 &46659534
 Transform:
   m_ObjectHideFlags: 0
