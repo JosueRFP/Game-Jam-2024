@@ -33,6 +33,7 @@ public class PersonManager : MonoBehaviour
         {
             //acabar jogo
             Debug.Log("GameEnd");
+            return;
         }
         activeCase = personCases[Random.Range(0, personCases.Count - 1)];
         personCases.Remove(activeCase);
@@ -40,8 +41,36 @@ public class PersonManager : MonoBehaviour
         dialogueName.text = activeCase.name;
         dialogueSetence.text = activeCase.setence;
         dialogueSprite.sprite = activeCase.personFace;
+    }
 
+    public void AIPointDistribution(bool aproveButton) 
+    { 
+        if (aproveButton && activeCase.goodBehaviour) 
+        {
+            AIPoints.Instance.goodPoints++;
+            chooseNewCase();
+            return;
+        }
+        else if(aproveButton && !activeCase.goodBehaviour) 
+        { 
+            AIPoints.Instance.eviPoints++;
+            chooseNewCase();
+            return;
+        }
 
+        if(!aproveButton && !activeCase.goodBehaviour) 
+        { 
+            AIPoints.Instance.goodPoints++;
+            chooseNewCase();
+            return;
+        }
+        else if(!aproveButton && activeCase.goodBehaviour) 
+        {
+            AIPoints.Instance.eviPoints++;
+            chooseNewCase();
+            return;
+        }
 
+        
     }
 }
