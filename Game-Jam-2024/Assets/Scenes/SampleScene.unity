@@ -2339,8 +2339,12 @@ MonoBehaviour:
   DaysTransitioningText: {fileID: 961398845}
   goodSetences:
   - "As pessoas saem satisfeitas da cl\xEDnica"
+  - "Mais pacientes come\xE7aram a vir"
+  - "As reviews sempre mencionam meus \xF3timos conselhos"
   badSetences:
   - As pessoas me evitam nos corredores
+  - As reviews tem notas baixas
+  - Meus atendimentos diminuiram...
 --- !u!4 &845793968
 Transform:
   m_ObjectHideFlags: 0
