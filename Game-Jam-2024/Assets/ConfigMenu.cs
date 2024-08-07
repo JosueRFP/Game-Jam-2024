@@ -26,6 +26,11 @@ public class ConfigMenu : MonoBehaviour
         { 
             OpenConfigMenu();
         }
+
+        if(_mainCam ==null) 
+        {
+            _mainCam = Camera.main;
+        }
     }
 
     public void ChangeType(int type) 
