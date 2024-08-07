@@ -8,7 +8,8 @@ public class CamerMove : MonoBehaviour
 
     private void Update()
     {
-        transform.rotation = new Quaternion(transform.rotation.x, rotateSpeed * Time.deltaTime, 0,0);
+
+        this.gameObject.transform.localEulerAngles += new Vector3(0, rotateSpeed*Time.deltaTime, 0);
     }
 
 }
