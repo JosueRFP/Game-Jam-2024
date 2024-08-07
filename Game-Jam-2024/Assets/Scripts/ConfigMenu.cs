@@ -13,11 +13,17 @@ public class ConfigMenu : MonoBehaviour
 
     [SerializeField]Slider volumeSlider;
 
+    static float volumeSliderValue = 1f;
+
     public Toggle[] daltonismToggles;
+    static int daltonismValue;
     void Start()
     {
+
+        AudioListener.volume = volumeSliderValue;
         _mainCam = Camera.main;
         colorblind = _mainCam.GetComponent<Colorblind>();
+        colorblind.Type = daltonismValue;
     }
 
     private void Update()
@@ -40,6 +46,7 @@ public class ConfigMenu : MonoBehaviour
             toggle.isOn = false;
         }
         colorblind.Type = type;
+        daltonismValue = type;
     }
 
     public void OpenConfigMenu() 
@@ -58,5 +65,6 @@ public class ConfigMenu : MonoBehaviour
     public void ChangeVolume() 
     { 
         AudioListener.volume = volumeSlider.value;
+        volumeSliderValue = volumeSlider.value;
     }
 }

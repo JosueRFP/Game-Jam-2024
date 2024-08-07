@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("Ambiente");
+    }
     public void EndGame() 
     {
         dialoguePanel.SetActive(false);
