@@ -9,11 +9,23 @@ public class ConfigMenu : MonoBehaviour
     Camera _mainCam;
     Colorblind colorblind;
 
+    [SerializeField] GameObject configMenu;
+
+    [SerializeField]Slider volumeSlider;
+
     public Toggle[] daltonismToggles;
     void Start()
     {
         _mainCam = Camera.main;
         colorblind = _mainCam.GetComponent<Colorblind>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape)) 
+        { 
+            OpenConfigMenu();
+        }
     }
 
     public void ChangeType(int type) 
@@ -25,11 +37,21 @@ public class ConfigMenu : MonoBehaviour
         colorblind.Type = type;
     }
 
+    public void OpenConfigMenu() 
+    {
+        configMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
     public void CloseConfigMenu() 
     { 
         Time.timeScale = 1.0f;
-        this.gameObject.SetActive(false);
+        configMenu.SetActive(false);
 
     }
 
+    public void ChangeVolume() 
+    { 
+        AudioListener.volume = volumeSlider.value;
+    }
 }
