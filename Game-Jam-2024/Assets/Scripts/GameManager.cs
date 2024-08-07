@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
     public GameObject endgame, dialoguePanel;
     public TMP_Text DaysTransitioningText;
 
+
     public string[] goodSetences, badSetences;
+
+    public string goodEndingS, badEndingS;
 
     private void Awake()
     {
@@ -24,7 +27,7 @@ public class GameManager : MonoBehaviour
         {
             if (PersonManager.Instance.days <= 0 || PersonManager.Instance.personCases.Count <= 0) 
             {
-                //badEnding
+                Ending(false);
                 Debug.Log("BadEnding");
                 return;
             }
@@ -37,7 +40,7 @@ public class GameManager : MonoBehaviour
         {
             if (PersonManager.Instance.days <= 0 || PersonManager.Instance.personCases.Count <= 0)
             {
-                //goodEnding
+                Ending(true);
                 Debug.Log("GoodEnding");
                 return;
             }
@@ -50,5 +53,22 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void Ending(bool goodEnding) 
+    { 
+        if(goodEnding) 
+        {
+            endgame.GetComponent<Animator>().SetTrigger("GoodEnding");
+            DaysTransitioningText.text = goodEndingS;
+        }
+        else 
+        {
+            endgame.GetComponent<Animator>().SetTrigger("BadEnding");
+            DaysTransitioningText.text = badEndingS;
+
+        }
+        
+    }
 
 }
+
+
