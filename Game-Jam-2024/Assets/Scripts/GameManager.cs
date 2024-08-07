@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         endgame.GetComponent<Animator>().SetTrigger("EndGameT");
         if (AIPoints.Instance.eviPoints >= AIPoints.Instance.goodPoints) 
         {
-            if (PersonManager.Instance.days <= 0) 
+            if (PersonManager.Instance.days <= 0 || PersonManager.Instance.personCases.Count <= 0) 
             {
                 //badEnding
                 Debug.Log("BadEnding");
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            if (PersonManager.Instance.days <= 0)
+            if (PersonManager.Instance.days <= 0 || PersonManager.Instance.personCases.Count <= 0)
             {
                 //goodEnding
                 Debug.Log("GoodEnding");

@@ -44,7 +44,7 @@ public class PersonManager : MonoBehaviour
 
     public void chooseNewCase() 
     {   
-        if (personCases.Count <= 0 || personTokens <= 0 ) 
+        if (personCases.Count <= 0 || personTokens <= 0 || days <=0 ) 
         {
             GameManager.Instance.EndGame();
             days--;
