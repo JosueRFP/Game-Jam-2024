@@ -19,10 +19,10 @@ public class PersonManager : MonoBehaviour
     [Header("Pontos pra passar de dia")]
     [Tooltip("Quantos pacientes pra trocar de dia")]
     public int personTokens;
-    int storedTokens;
+    [HideInInspector]public int storedTokens;
 
     [Header("Quantidade de dias")]
-    [Range(1, 5)]
+    [Range(0, 5)]
     public int days;
 
 
@@ -44,10 +44,10 @@ public class PersonManager : MonoBehaviour
 
     public void chooseNewCase() 
     {   
-        Debug.Log("Caso novo");
         if (personCases.Count <= 0 || personTokens <= 0 ) 
         {
             GameManager.Instance.EndGame();
+            days--;
             personTokens = storedTokens;
             Debug.Log("GameEnd");
             return;
@@ -119,7 +119,7 @@ public class PersonManager : MonoBehaviour
 
         if (currentSentenceIncremented < activeCase.setences.Length - 1)
         {
-            Debug.Log("tem proxima frase");
+           
         }
         else
         {
@@ -131,7 +131,6 @@ public class PersonManager : MonoBehaviour
         }
 
         currentSetence++;
-        Debug.Log(currentSetence);
         StopAllCoroutines();
         StartCoroutine(TypeLetters(activeCase.setences[currentSetence]));
     }
