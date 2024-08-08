@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
     public GameObject creditsPainel;
+
     
     public void Teleport(string tp)
     {

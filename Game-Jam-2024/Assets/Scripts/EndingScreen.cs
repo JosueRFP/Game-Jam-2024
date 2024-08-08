@@ -11,6 +11,11 @@ public class EndingScreen : MonoBehaviour
         GameManager.Instance.dialoguePanel.SetActive(true);
     }
 
+    public void StopSounds() 
+    {
+        FindObjectOfType<AudioManager>().StopAll();
+    }
+
     public void NewCamPos(int i) 
     {
         if (i == 1) 
