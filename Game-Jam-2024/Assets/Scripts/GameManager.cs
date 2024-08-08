@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         endgame.GetComponent<Animator>().SetTrigger("EndGameT");
-        if (AIPoints.Instance.eviPoints >= AIPoints.Instance.goodPoints) 
+        if (AIPoints.Instance.eviPoints > AIPoints.Instance.goodPoints) 
         {
             if (PersonManager.Instance.days <= 0 || PersonManager.Instance.personCases.Count <= 0) 
             {
