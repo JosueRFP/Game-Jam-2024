@@ -2370,7 +2370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - soundName: Musiquinha
-    soundClip: {fileID: 8300000, guid: 2da2bc2ca431ec045b8cffb0bed2ad5d, type: 3}
+    soundClip: {fileID: 8300000, guid: 7ba6624c9127e71439010e015e7e4654, type: 3}
     volume: 0.052
     pitch: 1
     source: {fileID: 0}
@@ -2378,7 +2378,7 @@ MonoBehaviour:
   - soundName: Ambiente
     soundClip: {fileID: 8300000, guid: 1847ca002591c3042b08fe8b3c9c51df, type: 3}
     volume: 0.21
-    pitch: 0.8
+    pitch: 1
     source: {fileID: 0}
     canLoop: 1
   - soundName: Aprove
