@@ -34,10 +34,10 @@ public class RainbowText : MonoBehaviour
 
             Vector3 offset = wobble(Time.time + i);
 
-            colors[index] = rainbow.Evaluate(Mathf.Repeat(Time.time + vertices[index].x * 0.001f, 1f));
-            colors[index + 1] = rainbow.Evaluate(Mathf.Repeat(Time.time + vertices[index + 1].x * 0.001f, 1f));
-            colors[index + 2] = rainbow.Evaluate(Mathf.Repeat(Time.time + vertices[index + 2].x * 0.001f, 1f));
-            colors[index + 3] = rainbow.Evaluate(Mathf.Repeat(Time.time + vertices[index + 3].x * 0.001f, 1f));
+            colors[index] = rainbow.Evaluate(Mathf.Repeat(Time.time + vertices[index].x * 1f, 1f));
+            colors[index + 1] = rainbow.Evaluate(Mathf.Repeat(Time.time + vertices[index + 1].x * 1f, 1f));
+            colors[index + 2] = rainbow.Evaluate(Mathf.Repeat(Time.time + vertices[index + 2].x * 1f, 1f));
+            colors[index + 3] = rainbow.Evaluate(Mathf.Repeat(Time.time + vertices[index + 3].x * 1f, 1f));
 
             vertices[index] += offset;
             vertices[index + 1] += offset;
@@ -52,7 +52,7 @@ public class RainbowText : MonoBehaviour
 
     Vector2 wobble(float time) 
     {
-        return new Vector2(Mathf.Sin(time*3.3f), Mathf.Cos(time*2.5f));
+        return new Vector2(Mathf.Sin(time*1.3f), Mathf.Cos(time*1.5f));
     }
 }
 

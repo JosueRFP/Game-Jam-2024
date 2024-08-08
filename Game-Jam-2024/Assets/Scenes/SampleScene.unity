@@ -1189,8 +1189,8 @@ MonoBehaviour:
   - Ouvi coisas sobre comprarem um modelo mais novo de robo terapeuta
   goodEndingS: "A cl\xEDnica vive cheia, aprendo coisas novas a cada paciente e continuo
     melhorando meu entendimento das emo\xE7\xF5es humanas. :)"
-  badEndingS: "As pessoas se recusavam a me ver devido as minhas notas baixas, e
-    fui substitu\xEDdo por um rob\xF4 terapeuta mais avan\xE7ado. Adeus Mundo..."
+  badEndingS: "As pessoas se recusavam a me ver devido a minhas notas baixas, e eventualmente,
+    fui substitu\xEDdo por uma IA conselheira mais atualizada... Adeus Mundo..."
 --- !u!4 &845793968
 Transform:
   m_ObjectHideFlags: 0
