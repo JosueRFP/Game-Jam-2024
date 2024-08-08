@@ -88,25 +88,29 @@ public class PersonManager : MonoBehaviour
 
         if (aproveButton && activeCase.goodBehaviour) 
         {
+            FindObjectOfType<AudioManager>().Play("Aprove");
             AIPoints.Instance.goodPoints++;
             ChangePerson();
             return;
         }
         else if(aproveButton && !activeCase.goodBehaviour) 
-        { 
+        {
+            FindObjectOfType<AudioManager>().Play("Aprove");
             AIPoints.Instance.eviPoints++;
             ChangePerson();
             return;
         }
 
         if(!aproveButton && !activeCase.goodBehaviour) 
-        { 
+        {
+            FindObjectOfType<AudioManager>().Play("Negar");
             AIPoints.Instance.goodPoints++;
             ChangePerson();
             return;
         }
         else if(!aproveButton && activeCase.goodBehaviour) 
         {
+            FindObjectOfType<AudioManager>().Play("Negar");
             AIPoints.Instance.eviPoints++;
             ChangePerson();
             return;

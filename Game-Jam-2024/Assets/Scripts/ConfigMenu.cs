@@ -19,6 +19,7 @@ public class ConfigMenu : MonoBehaviour
     static int daltonismValue;
     void Start()
     {
+        volumeSlider.value = volumeSliderValue;
 
         AudioListener.volume = volumeSliderValue;
         _mainCam = Camera.main;

@@ -1552,7 +1552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.0799866}
+  m_AnchoredPosition: {x: 0, y: 1.079956}
   m_SizeDelta: {x: -499, y: -381.531}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &876597080
@@ -2371,16 +2371,28 @@ MonoBehaviour:
   sounds:
   - soundName: Musiquinha
     soundClip: {fileID: 8300000, guid: 2da2bc2ca431ec045b8cffb0bed2ad5d, type: 3}
-    volume: 0.015
+    volume: 0.052
     pitch: 1
     source: {fileID: 0}
     canLoop: 1
   - soundName: Ambiente
     soundClip: {fileID: 8300000, guid: 1847ca002591c3042b08fe8b3c9c51df, type: 3}
-    volume: 0.13
-    pitch: 1
+    volume: 0.21
+    pitch: 0.8
     source: {fileID: 0}
     canLoop: 1
+  - soundName: Aprove
+    soundClip: {fileID: 8300000, guid: fdde1905b03bf2b4da9d6476dfba711f, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    canLoop: 0
+  - soundName: Negar
+    soundClip: {fileID: 8300000, guid: 68ead5af43ce23144923ca2219427fb2, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    canLoop: 0
 --- !u!4 &1412560444
 Transform:
   m_ObjectHideFlags: 0

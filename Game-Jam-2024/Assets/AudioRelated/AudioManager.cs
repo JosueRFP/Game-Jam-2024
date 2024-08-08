@@ -42,4 +42,12 @@ public class AudioManager : MonoBehaviour
        Sound s = Array.Find(sounds,sounds => sounds.soundName == name);
        s.source.Play();
     }
+
+    public void StopAll() 
+    { 
+        foreach (Sound s in sounds) 
+        { 
+            s.source.Stop();
+        }
+    }
 }
