@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 175596206}
   - component: {fileID: 175596205}
   m_Layer: 0
-  m_Name: pixil-frame-0 (3)
+  m_Name: Certo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fdde1905b03bf2b4da9d6476dfba711f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.369
+  m_Volume: 0.642
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 401597971}
   - component: {fileID: 401597970}
   m_Layer: 0
-  m_Name: pixil-frame-0 (2)
+  m_Name: Errado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.5391955
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -478,7 +478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401597969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9754, y: 1.1071739, z: 0}
+  m_LocalPosition: {x: 5.65, y: 1.67, z: 0}
   m_LocalScale: {x: 0.0363263, y: 0.0363263, z: 0.0363263}
   m_ConstrainProportionsScale: 0
   m_Children: []
